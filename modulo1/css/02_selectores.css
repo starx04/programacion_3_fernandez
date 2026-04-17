@@ -1,0 +1,56 @@
+h3{
+    color:brown;
+    font-size: 6rem ;
+}
+
+.parrafos{
+    color:rgb(7, 243, 160);
+    font-size: 2rem;
+}
+.product-card{
+    background-color:rgb(73, 251, 222);
+    padding: 1rem;
+    border: 1px solid rgb(204, 241, 20);
+    border-radius: 8px;
+}
+.product-name{
+    font-size: 1.1rem;
+    color:rgb(204, 241, 20);
+}
+.product-price{
+    color:rgb(7, 243, 160);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#parrado-id{
+    color:rgb(7, 243, 160);
+    font-size: 2rem;
+    font-weight: bold;
+}
+*{
+    font-size: 2.1rem;
+    color:rgb(7, 243, 160);
+    font-weight: bold;
+    margin:0;
+    padding:0;
+}
+.menu>li{
+    color:salmon;
+}
+.navbar a{
+    color:springgreen;
+    text-decoration: none;
+}
+h4,h5,h6{
+    color:rgba(6, 178, 101, 0.499);
+    font-family: Arial, Helvetica, sans-serif;
+}
+button.btn-primary{
+    background-color:rgb(73, 251, 222);
+    color:seashell;
+}
+button.btn-error{
+    background-color:rgb(255, 99, 71);
+    color:seashell;
+}
