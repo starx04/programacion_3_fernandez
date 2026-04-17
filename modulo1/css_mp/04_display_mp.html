@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display en Menú</title>
+
+    <link rel="stylesheet" href="04_display_mp.css">
+    <link rel="stylesheet" href="03_box_mod_mp.css">
+</head>
+<body>
+
+    <h1 style="color: #4caf50">DISPLAY PARA MENÚ</h1>
+
+    <div class="banner-menu">
+        🍽️ Menú especial: 20% en platos principales
+    </div>
+
+    <div class="etiqueta-especial">Plato del día</div>
+    <button class="btn-pedido">Hacer pedido</button>
+
+<button onclick="toggleMenu()">Menú</button>
+
+<div id="menu" class="menu-movil">
+        <ul>
+            <li><a href="#">Entradas</a></li>
+            <li><a href="#">Platos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleMenu(){
+            const menu = document.getElementById('menu')
+            menu.classList.toggle('activo')
+        }
+    </script>
+
+</body>
+</html>
