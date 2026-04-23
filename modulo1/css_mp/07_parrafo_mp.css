@@ -1,0 +1,64 @@
+.parrafo {
+  line-height: 1.6; /* 1.6 × font-size actual */
+}
+
+.titulo-plato {
+  line-height: 1.2; /* títulos más compactos */
+}
+
+.descripcion-larga {
+  line-height: 1.8; /* textos largos más cómodos de leer */
+}
+.logo-restaurante {
+  letter-spacing: 0.15em; /* separa letras: S T A R F O O D */
+  text-transform: uppercase;
+}
+
+.etiqueta-categoria {
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+/*Alineacion de textos*/
+.banner-oferta    { text-align: center; }
+.descripcion      { text-align: left; }
+.precio-total     { text-align: right; }
+.texto-justificado { text-align: justify; }
+
+/* Links del menú sin subrayado */
+.none-text-decoration {
+  text-decoration: none;
+}
+
+/* Precio tachado en oferta */
+.precio-antes {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Subrayado personalizado */
+.link-destacado {
+  text-decoration: underline;
+  text-decoration-color: #4caf50;
+  text-underline-offset: 4px;
+}
+.logo-restaurante      { text-transform: uppercase; }  /* STARFOOD */
+.subtitulo        { text-transform: capitalize; } /* Cada Primera Mayúscula */
+.codigo-plato  { text-transform: lowercase; }  /* pasta-carbonara */
+.plato-nombre {
+  white-space: nowrap;      /* no permitir saltos de línea */
+  overflow: hidden;         /* ocultar lo que desborda */
+  text-overflow: ellipsis;  /* mostrar "..." al final */
+  max-width: 200px;
+}
+.alerta { color: red; }
+.exito  { color: green; }
+.info   { color: blue; }
+:root {
+  --color-primario:    #4caf50; /* verde StarFood */
+  --color-secundario:  #2e7d32; /* verde oscuro */
+  --color-acento:      #8bc34a; /* verde medio */
+  --color-fondo:       #f1f8e9; /* verde muy claro */
+  --color-texto:       #1b5e20; /* verde oscuro */
+}
+h1{
+  color: var(--color-primario);
