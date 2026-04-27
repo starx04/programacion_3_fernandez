@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<body>
+  <!-- El JS vive dentro del atributo onclick -->
+  <button onclick="alert('Hola, mundo!')">Haz clic</button>
+</body>
+    <br>
+    <h1 id="titulo1">Hola</h1>
+    <br>
+    <h1 id="titulo2">cargando</h1>
+
+  <!-- Mejor ubicar el script al final del body para no bloquear el renderizado -->
+  <script>
+    const titulo1 = document.getElementById("titulo1");
+    titulo1.textContent = "¡Hola, JavaScript!";
+    console.log("Script interno ejecutado");
+    console.log("helloworld");
+
+  </script>
+  <script src="01_hello_world.js" defer ></script>
+</html>
