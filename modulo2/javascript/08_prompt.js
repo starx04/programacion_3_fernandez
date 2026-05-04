@@ -1,11 +1,16 @@
-const readline = require("readline");
+//libreia que se instalo:
+//npm install prompt-sync
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const prompt = require("prompt-sync")();
 
-rl.question("Escribe tu nombre: ", (nombre) => {
-  console.log(`Hola, ${nombre}!`);
-  rl.close();
-});
+const nombre = prompt("Escribe tu nombre: ");
+console.log(`Hola, ${nombre}!`);
+
+const edadTexto = prompt("Escribe tu edad: ");
+const edad = parseInt(edadTexto, 10);
+
+if (isNaN(edad)) {
+  console.log("Eso no es un número válido.");
+} else {
+  console.log(`Tienes ${edad} años.`);
+}

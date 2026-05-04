@@ -9,3 +9,4 @@ rl.question("Escribe tu nombre: ", (nombre) => {
   console.log(`Hola, ${nombre}!`);
   rl.close();
 });
+
