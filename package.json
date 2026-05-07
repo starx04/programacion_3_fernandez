@@ -1,0 +1,21 @@
+{
+  "name": "programacion_3_fernandez",
+  "version": "1.0.0",
+  "description": "A continuación, un diccionario ordenado alfabéticamente de las etiquetas HTML utilizadas en los archivos del proyecto del menú de restaurante. Cada etiqueta incluye una descripción directa de su función y un ejemplo relacionado con el negocio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starx04/programacion_3_fernandez.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/starx04/programacion_3_fernandez/issues"
+  },
+  "homepage": "https://github.com/starx04/programacion_3_fernandez#readme"
+}

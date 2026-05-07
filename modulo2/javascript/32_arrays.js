@@ -198,3 +198,23 @@ const anidado = [[1, 2], [3, 4], [5, 6]];
 const plano   = anidado.reduce((acum, arr) => [...acum, ...arr], []);
 console.log(plano);   // [1, 2, 3, 4, 5, 6]
 // alternativa moderna: anidado.flat()
+
+//
+//EJERCICIOS EN CLASE
+//
+
+/*Ejercicio 1 — map y filter
+Dado este array de temperaturas en Celsius:
+Usa map para convertir todas a Fahrenheit. Fórmula: (c * 9/5) + 32
+Usa filter para quedarte solo con las temperaturas Celsius entre 0 y 30
+Encadena filter + map: filtra las que estén entre 0 y 30 y conviértelas a Fahrenheit*/
+
+const celsius = [0, 15, -5, 22, 37, 100, -10, 28];
+const fahrenheit = celsius.map(c => (c * 9/5) + 32);
+console.log(fahrenheit);  
+
+const entre0y30 = celsius.filter(c => c >= 0 && c <= 30);
+console.log(entre0y30);
+
+const entre0y30F = celsius.filter(c => c >= 0 && c <= 30).map(c => (c * 9/5) + 32);
+console.log(entre0y30F);
