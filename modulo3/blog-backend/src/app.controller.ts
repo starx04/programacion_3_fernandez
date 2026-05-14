@@ -1,5 +1,6 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
+import { ProductDto } from './product.dto';
 
 @Controller()
 export class AppController {
@@ -9,9 +10,16 @@ export class AppController {
   getHeath(): any {
     return this.appService.getHeath();
   }
-  @Post("/productos")
-  createProducto(): any {
-    return this.appService.createProducto();
+  @Post("/products")
+  createProduct(@Body() product: ProductDto): any {
+    return this.appService.createProduct(product);
   }
-  
+  @Get("/products")
+  findAll(): ProductDto[] {
+    return this.appService.findAll();
+  }
+  @Get("/products/:id")
+  findAllById(@Param('id') id: string): ProductDto | undefined {
+    return this.appService.findAllById(id);
+  }  
 }
