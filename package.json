@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/starx04/programacion_3_fernandez/issues"
   },
-  "homepage": "https://github.com/starx04/programacion_3_fernandez#readme"
+  "homepage": "https://github.com/starx04/programacion_3_fernandez#readme",
+  "dependencies": {
+    "nestjs-typeorm-paginate": "^4.1.0"
+  }
 }
