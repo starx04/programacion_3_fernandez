@@ -4,14 +4,14 @@ import { Category } from '../categories/category.entity';
 @Entity('posts')
 export class Post {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id?: string;
 
   @Column()
-  title: string;
+  title?: string;
 
   @Column()
-  content: string;
+  content?: string;
 
   @ManyToOne(() => Category, { eager: true })
-  category: Category;
+  category?: Category;
 }

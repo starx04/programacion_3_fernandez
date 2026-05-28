@@ -5,7 +5,7 @@ import { paginate, Pagination } from 'nestjs-typeorm-paginate';
 import { Category } from './category.entity';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
-import { QueryDto } from '../common/dtos/query.dto';
+import { QueryDto } from 'src/common/dto/query.dto';
 
 @Injectable()
 export class CategoriesService {

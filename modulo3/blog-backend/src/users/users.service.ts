@@ -1,12 +1,14 @@
-import * as bcrypt from 'bcrypt';
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { paginate, Pagination } from 'nestjs-typeorm-paginate';
 import { User } from './user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { QueryDto } from '../common/dtos/query.dto';
+import * as bcrypt from 'bcrypt';
+import { paginate } from 'nestjs-typeorm-paginate/dist/paginate';
+import { Pagination } from 'nestjs-typeorm-paginate/dist/pagination';
+import { IPaginationOptions } from 'nestjs-typeorm-paginate/dist/interfaces';
+import { QueryDto } from 'src/common/dto/query.dto';
 
 @Injectable()
 export class UsersService {
@@ -15,18 +17,13 @@ export class UsersService {
     private readonly userRepository: Repository<User>,
   ) {}
 
-  async create(createUserDto: CreateUserDto): Promise<User | null> {
-    try {
-      const hashedPassword = await bcrypt.hash(createUserDto.password!, 10);
-      const user = this.userRepository.create({
-        ...createUserDto,
-        password: hashedPassword,
-      });
-      return await this.userRepository.save(user);
-    } catch (err) {
-      console.error('Error creating user:', err);
-      return null;
-    }
+  async create(createUserDto: CreateUserDto) {
+    const hashedPassword = await bcrypt.hash(createUserDto!.password!, 10);
+    const user = this.userRepository.create({
+      ...createUserDto,
+      password: hashedPassword,
+    });
+    return this.userRepository.save(user);
   }
 
   async findAll(
@@ -109,4 +106,10 @@ export class UsersService {
     if (!user) return null;
     return this.userRepository.remove(user);
   }
+  async updateProfile(id: string, profile: string) {
+  const user = await this.userRepository.findOne({ where: { id: id } });
+  if (!user) throw new NotFoundException('User not found');
+  user.profile = profile;
+  return this.userRepository.save(user);
+}
 }
