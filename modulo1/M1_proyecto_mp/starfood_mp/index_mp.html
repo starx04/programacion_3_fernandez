@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarFood - Restaurante Gourmet</title>
+</head>
+<body>
+    <header>
+        <h1>StarFood</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#reservas">Reservas</a></li>
+                <li><a href="#comparativa">Comparativa</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="menu">
+            <h2>Menú Destacado</h2>
+            <ul>
+                <li><strong>Filete Gourmet</strong> - 25€ <br><small>Carne a la parrilla con salsa especial</small></li>
+                <li><strong>Pasta Carbonara</strong> - 18€ <br><small>Pasta tradicional italiana</small></li>
+                <li><strong>Ensalada Star</strong> - 12€ <br><small>Fresca y saludable</small></li>
+            </ul>
+            <hr>
+            <h3>Especiales del Día</h3>
+            <ul>
+                <li>Pescado al horno con verduras</li>
+                <li>Risotto de setas</li>
+            </ul>
+        </section>
+        <section id="reservas">
+            <h2>Reserva tu mesa</h2>
+            <form action="/procesar" method="post" autocomplete="on">
+                <fieldset>
+                    <legend>Datos de la reserva</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="personas">Nº de personas:</label>
+                    <input type="number" id="personas" name="personas" min="1" max="20" required>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" required>
+                    <input type="submit" value="Reservar">
+                </fieldset>
+            </form>
+        </section>
+        <section id="comparativa">
+            <h2>Comparativa de Menús</h2>
+            <table border="1">
+                <caption>Comparativa de menús especiales</caption>
+                <thead>
+                    <tr>
+                        <th>Menú</th>
+                        <th>Precio</th>
+                        <th>Incluye postre</th>
+                        <th>Bebida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gourmet</td>
+                        <td>35€</td>
+                        <td>Sí</td>
+                        <td>Vino</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetariano</td>
+                        <td>28€</td>
+                        <td>Sí</td>
+                        <td>Agua/Jugo</td>
+                    </tr>
+                    <tr>
+                        <td>Infantil</td>
+                        <td>15€</td>
+                        <td>No</td>
+                        <td>Refresco</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Dirección: Calle Gourmet 123, Ciudad, País</p>
+            <p>Email: <a href="mailto:reservas@starfood.com">reservas@starfood.com</a></p>
+            <p>Teléfono: <a href="tel:+34911234567">+34 911 23 45 67</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 StarFood - Restaurante Gourmet</p>
+    </footer>
+</body>
+</html>

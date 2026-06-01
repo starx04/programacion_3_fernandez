@@ -1,0 +1,1 @@
+console.log("menú desde consola con nodejs");
