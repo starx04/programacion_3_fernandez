@@ -30,8 +30,9 @@
         background-color: #f9f9f9;
     }
     .formulario {
-    background-color: aliceblue;
-    border: 1px solid #d9f3f2;
+    background-color: rgb(218, 12, 12);
+    color: #fff;
+    border: 4px solid #000404;
     padding: 20px;
     margin-top: 20px;
     }
@@ -49,18 +50,47 @@
     }
 
     .btn-agregar:hover {
-        background-color: rgb(128, 221, 221);
+        background-color: rgb(5, 226, 226);
         color: #f9f9f9;
     }
     .btn-cancelar:hover {
         background-color: bisque;
         color: #333;
     }
+    .stat-card {
+        display: inline-block;
+        width: 200px;
+        padding: 15px;
+        margin: 10px;
+        background-color: #c30b0b;
+        border-radius: 5px ;
+        color: #fff;
+        text-align: center;
+    }
 </style>
 </head>
 <body>
     <h1 id="titulo">Eventos del DOM</h1>
     <h2>CRUD de Productos</h2>
+    <div id="stats">
+        <div class="stat-card">
+            <h3>Total de Productos</h3>
+            <p id="totalProductos">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Precio Promedio</h3>
+            <p id="precioPromedio">$0.00</p>
+        </div>
+        <div class="stat-card">
+            <h3>Precio Más Caro</h3>
+            <p id="precioMasCaro">N/A</p>
+        </div>
+        <div class="stat-card" >
+            <h3>Precio Más Barato</h3>
+            <p id="precioMasBarato">N/A</p>
+        </div>
+    </div>    
+    
     <div class="formulario">
         <h3>Agregar Nuevo Producto</h3>
         <label for="nombre">Nombre:</label>

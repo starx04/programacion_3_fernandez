@@ -134,7 +134,25 @@ function eliminarProducto(id) {
         }
     }
 }
+
+function actualizarEstadisticas() {
+    const totalProductos = productos.length;
+    const precioPromedio = totalProductos > 0 ?
+        (productos.reduce((sum, p) => sum + p.precio, 0) / totalProductos).toFixed(2) : 0;
+    document.getElementById('totalProductos')
+        .textContent = totalProductos;
+    document.getElementById('precioPromedio')
+        .textContent = precioPromedio;
+
+    const precioMasCaro = totalProductos > 0 ?
+        Math.max(...productos.map(p => p.precio)).toFixed(2) : 'N/A';
+    const precioMasBarato = totalProductos > 0 ?
+        Math.min(...productos.map(p => p.precio)).toFixed(2) : 'N/A';
+
+    document.getElementById('precioMasCaro').textContent = precioMasCaro;
+    document.getElementById('precioMasBarato').textContent = precioMasBarato;
+}
 window.onload = function () {
     renderProductos();
-
+    actualizarEstadisticas();
 };
