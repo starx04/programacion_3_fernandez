@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Restaurante - Calificaciones de platos</title>
+    <script src="dom16_calificaciones_mp.js" defer></script>
+    <style>
+        .error { color: red; display: none; }
+        .estado-recomendado { color: #1e8449; font-weight: bold; }
+        .estado-no-recomendado { color: #c0392b; font-weight: bold; }
+        #listaPlatos, #estadisticas { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Calificaciones de platos por clientes</h1>
+    <label>Nombre del plato: <input type="text" id="inNombre"></label><br>
+    <label>Calificacion (0-10): <input type="number" id="inNota" min="0" max="10" step="0.1"></label><br>
+    <button id="btnAgregar">Agregar calificacion</button>
+    <button id="btnCalcular">Calcular estadisticas</button>
+    <button id="btnLimpiar">Limpiar</button>
+
+    <div id="error" class="error"></div>
+
+    <div id="listaPlatos">
+        <table>
+            <thead><tr><th>#</th><th>Plato</th><th>Calificacion</th><th>Estado</th><th></th></tr></thead>
+            <tbody id="tablaBody"></tbody>
+        </table>
+    </div>
+
+    <div id="estadisticas">
+        <p>Promedio: <span id="sPromedio"></span></p>
+        <p>Mayor calificacion: <span id="sMayor"></span></p>
+        <p>Menor calificacion: <span id="sMenor"></span></p>
+        <p>Recomendados: <span id="sRecomendados"></span></p>
+    </div>
+</body>
+</html>

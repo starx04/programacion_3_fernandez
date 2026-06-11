@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Restaurante - Eventos DOM</title>
+    <script src="dom04-eventos_mp.js" defer></script>
+    <style>
+        .boton {
+            background-color: brown;
+            padding: 0.5cm 1cm;
+            color: aliceblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Eventos del pedido</h1>
+    <h2 id="h2-mod">Eventos inline</h2>
+    <button class="boton" id="btn">Mostrar bienvenida</button>
+    <button class="boton" id="btn2">Agregar plato al pedido</button>
+    <ul id="lista-pedido"></ul>
+
+    <button class="boton" id="btn3">Agregar plato desde listener</button>
+    <ul id="lista-pedido2"></ul>
+
+    <button class="boton" id="btn4">Enviar pedido a cocina</button>
+    <p id="texto-modificable">Pedido pendiente de enviar</p>
+</body>
+</html>

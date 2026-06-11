@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Restaurante - Liquidacion de mesero</title>
+    <script src="dom15_sueldo-trabajador_mp.js" defer></script>
+    <style>.error { color: red; display: none; } #resultado { display: none; }</style>
+</head>
+<body>
+    <h1>Liquidacion de turno del mesero</h1>
+    <label>Pago base del turno: <input type="number" id="inPagoBase"></label><br>
+    <label>Propinas recibidas: <input type="number" id="inPropinas"></label><br>
+    <label>% de comision sobre propinas: <input type="number" id="inComision" value="10"></label><br>
+    <label>Descuento por uniforme/caja: <input type="number" id="inDescuento"></label><br>
+    <button id="btnCalcular">Calcular liquidacion</button>
+    <button id="btnLimpiar">Limpiar</button>
+
+    <div id="error" class="error"></div>
+    <div id="resultado">
+        <p>Pago base: <span id="rPagoBase"></span></p>
+        <p>Comision sobre propinas: <span id="rComisionPropinas"></span></p>
+        <p>Total ingresos: <span id="rTotalIngresos"></span></p>
+        <p>Descuento: <span id="rDescuento"></span></p>
+        <p><strong>Liquido a pagar: <span id="rLiquidoAPagar"></span></strong></p>
+    </div>
+</body>
+</html>
