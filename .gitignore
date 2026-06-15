@@ -31,9 +31,7 @@ pnpm-debug.log*
 # =========================
 # ENTORNO
 # =========================
-.env
-.env.*
-!.env.example
+
 
 # =========================
 # SISTEMA OPERATIVO
