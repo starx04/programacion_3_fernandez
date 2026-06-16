@@ -1,5 +1,7 @@
 import MascotaCard        from './components/MascotaCard'
 import MascotaCatalogList from './components/MascotCatalog'
+import PlatoDestacadoCard from './components/MascotaCard_mp'
+import MenuCatalog        from './components/MascotCatalog_mp'
 
 interface Mascota {
   id: number
@@ -17,6 +19,22 @@ const catalog: Mascota[] = [
   { id: 5, name: 'bella', price: 39.99, tipo_raza: ' Alemana' },
 ]
 
+interface Plato {
+  id: number
+  nombre: string
+  precio: number
+  agotado?: boolean
+  categoria?: string
+}
+
+const menu: Plato[] = [
+  { id: 1, nombre: 'Lomo saltado',      precio: 12.5, categoria: 'Fondos' },
+  { id: 2, nombre: 'Ceviche mixto',     precio: 14.0, categoria: 'Entradas' },
+  { id: 3, nombre: 'Ají de gallina',    precio: 10.5, agotado: true, categoria: 'Fondos' },
+  { id: 4, nombre: 'Suspiro limeño',    precio: 6.0, categoria: 'Postres' },
+  { id: 5, nombre: 'Chicha morada',     precio: 3.0, categoria: 'Bebidas' },
+]
+
 export default function App() {
   return (
     <main style={{ maxWidth: 540, margin: '40px auto', fontFamily: 'sans-serif' }}>
@@ -30,6 +48,17 @@ export default function App() {
       <MascotaCard title="Oferta del día" description="luna con 20% de descuento" />
 
       <MascotaCatalogList mascotas={catalog} title="Mascotaos disponibles" />
+
+      {/* Versión "Menú de Restaurante" (_mp) de los mismos componentes */}
+      <PlatoDestacadoCard
+        nombre="Bienvenido al menú del restaurante"
+        descripcion="Descubre los platos favoritos de nuestros comensales"
+        destacado
+      />
+
+      <PlatoDestacadoCard nombre="Plato del día" descripcion="Lomo saltado con 20% de descuento" />
+
+      <MenuCatalog platos={menu} titulo="Platos disponibles" />
 
     </main>
   )
