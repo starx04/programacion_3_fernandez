@@ -1,37 +1,35 @@
-import ProductCard        from './components/ProductCard'
+import MascotaCard        from './components/MascotaCard'
+import MascotaCatalogList from './components/MascotCatalog'
 
-interface Product {
+interface Mascota {
   id: number
   name: string
   price: number
   outOfStock?: boolean
+  tipo_raza?: string
 }
 
-const catalog: Product[] = [
-  { id: 1, name: 'Teclado mecánico',  price: 89.99 },
-  { id: 2, name: 'Monitor 27"',       price: 349.99 },
-  { id: 3, name: 'Mouse inalámbrico', price: 29.99, outOfStock: true },
-  { id: 4, name: 'Webcam HD',         price: 59.99 },
+const catalog: Mascota[] = [
+  { id: 1, name: 'rex',  price: 89.99, tipo_raza: ' Alemana' },
+  { id: 2, name: 'oso', price: 349.99, tipo_raza: ' Alemana' },
+  { id: 3, name: 'luna', price: 29.99, outOfStock: true, tipo_raza: ' Alemana' },
+  { id: 4, name: 'max',  price: 59.99, tipo_raza: ' Alemana' },
+  { id: 5, name: 'bella', price: 39.99, tipo_raza: ' Alemana' },
 ]
 
 export default function App() {
   return (
     <main style={{ maxWidth: 540, margin: '40px auto', fontFamily: 'sans-serif' }}>
 
-      <ProductCard
-        title="Bienvenido a la tienda"
-        description="Encuentra los mejores accesorios para tu escritorio"
-        price={0}
+      <MascotaCard
+        title="Bienvenido a la tienda de mascotas"
+        description="Encuentra las mejores mascotas disponibles en nuestro catalogo"
+        highlighted
       />
 
-      <ProductCard title="Oferta del día" 
-      description="Webcam HD con 20% de descuento" />
-      
-      <ProductCard
-        title="laptop gamer"
-        description=""
-        price={1000}
-      />
+      <MascotaCard title="Oferta del día" description="luna con 20% de descuento" />
+
+      <MascotaCatalogList mascotas={catalog} title="Mascotaos disponibles" />
 
     </main>
   )

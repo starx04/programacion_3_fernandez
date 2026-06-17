@@ -111,3 +111,6 @@ lerna-debug.log
 *.pid
 *.seed
 *.pid.lock
+.aider.tags.cache.v4
+.env-node
+
