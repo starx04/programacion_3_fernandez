@@ -12,7 +12,7 @@ export default function DigitalCounter({
   initialValue = 0,
   step = 1,
   label = 'Contador',
-}) {
+}: DigitalCounterProps) {
   const [count, setCount] = useState(initialValue)
 
   function increment() {
