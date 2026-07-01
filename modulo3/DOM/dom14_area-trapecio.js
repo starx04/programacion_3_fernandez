@@ -14,7 +14,7 @@ btnCalcular.addEventListener('click', () => {
          || isNaN(baseMenorNumerico) 
          || isNaN(alturaNumerico)
     ) {
-          error.textContent = 'Por favor, ingresa valores numéricos válidos.'
+          error.textContent = 'Por favor, ingresa valores numéricos válidos.';
           return;
     }
     if (baseMayorNumerico <= 0 
@@ -26,5 +26,4 @@ btnCalcular.addEventListener('click', () => {
     }
     const area = ((baseMayorNumerico + baseMenorNumerico) / 2) * alturaNumerico;
     resultado.textContent = `Resultado: ${area}`;
-
 });
