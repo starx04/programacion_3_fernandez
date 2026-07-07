@@ -3,7 +3,7 @@
 import { useParams, Link } from 'react-router-dom'
 
 // Define el tipo de los parámetros de la URL
-interface ProductParams {
+interface ProductParams extends Record<string, string | undefined> {
   id: string   // los params siempre son string — convierte si necesitas número
 }
 

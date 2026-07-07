@@ -1,26 +1,29 @@
-// src/pages/ProductsPage.tsx
+// src/pages/ProductsPage_mp.tsx
+// Misma técnica que ProductsPage.tsx: useSearchParams sincronizado con la
+// URL + useMemo para filtrar, ahora para el listado de platos del menú.
 
 import { useMemo }  from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 
-interface Product {
+interface Dish {
   id:       number
   name:     string
   category: string
   price:    number
 }
 
-const PRODUCTS: Product[] = [
-  { id: 1, name: 'Teclado mecánico',  category: 'periféricos',  price: 89  },
-  { id: 2, name: 'Monitor 27"',       category: 'pantallas',    price: 349 },
-  { id: 3, name: 'Mouse inalámbrico', category: 'periféricos',  price: 29  },
-  { id: 4, name: 'Webcam HD',         category: 'cámaras',      price: 59  },
-  { id: 5, name: 'Auriculares BT',    category: 'audio',        price: 149 },
+const DISHES: Dish[] = [
+  { id: 1, name: 'Ceviche de camarón',   category: 'entradas',      price: 12 },
+  { id: 2, name: 'Sopa de bola de verde', category: 'entradas',     price: 6  },
+  { id: 3, name: 'Seco de pollo',        category: 'platos fuertes', price: 9  },
+  { id: 4, name: 'Encebollado',          category: 'platos fuertes', price: 8  },
+  { id: 5, name: 'Tres leches',          category: 'postres',       price: 5  },
+  { id: 6, name: 'Jugo de mora',         category: 'bebidas',       price: 3  },
 ]
 
-export default function ProductsPage() {
+export default function ProductsPage_mp() {
   // useSearchParams sincroniza filtros con la URL
-  // ?q=teclado&category=periféricos queda en la barra del navegador
+  // ?q=ceviche&category=entradas queda en la barra del navegador
   const [searchParams, setSearchParams] = useSearchParams()
 
   const query    = searchParams.get('q')        ?? ''
@@ -45,23 +48,23 @@ export default function ProductsPage() {
   }
 
   const filtered = useMemo(() =>
-    PRODUCTS
-      .filter((p) => p.name.toLowerCase().includes(query.toLowerCase()))
-      .filter((p) => !category || p.category === category),
+    DISHES
+      .filter((d) => d.name.toLowerCase().includes(query.toLowerCase()))
+      .filter((d) => !category || d.category === category),
     [query, category]
   )
 
-  const categories = [...new Set(PRODUCTS.map((p) => p.category))]
+  const categories = [...new Set(DISHES.map((d) => d.category))]
 
   return (
     <div>
-      <h1 style={{ fontSize: 22, marginBottom: 16 }}>Productos</h1>
+      <h1 style={{ fontSize: 22, marginBottom: 16 }}>Menú</h1>
 
       <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         <input
           value={query}
           onChange={(e) => handleQueryChange(e.target.value)}
-          placeholder="Buscar..."
+          placeholder="Buscar plato..."
           style={{ flex: 1, padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: 6 }}
         />
         <select
@@ -77,10 +80,10 @@ export default function ProductsPage() {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-        {filtered.map((product) => (
+        {filtered.map((dish) => (
           <Link
-            key={product.id}
-            to={`/products/${product.id}`}
+            key={dish.id}
+            to={`/mp/menu/${dish.id}`}
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
             <div style={{
@@ -88,10 +91,10 @@ export default function ProductsPage() {
               padding: '12px 16px', border: '1px solid #e5e7eb', borderRadius: 8,
             }}>
               <div>
-                <p style={{ margin: 0, fontWeight: 500 }}>{product.name}</p>
-                <p style={{ margin: 0, fontSize: 12, color: '#9ca3af' }}>{product.category}</p>
+                <p style={{ margin: 0, fontWeight: 500 }}>{dish.name}</p>
+                <p style={{ margin: 0, fontSize: 12, color: '#9ca3af' }}>{dish.category}</p>
               </div>
-              <span style={{ fontWeight: 600 }}>${product.price}</span>
+              <span style={{ fontWeight: 600 }}>${dish.price}</span>
             </div>
           </Link>
         ))}
