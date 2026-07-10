@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/starx04/programacion_3_fernandez#readme",
   "dependencies": {
+    "antd": "^6.5.0",
     "nestjs-typeorm-paginate": "^4.1.0",
     "react-router-dom": "^7.18.1",
     "zod": "^4.4.3"
