@@ -6,8 +6,15 @@ import LabTwAlert   from './lab/LabTwAlert'
 import LabTwCard    from './lab/LabTwCard'
 import LabTwForm    from './lab/LabTwForm'
 import LabTwTable   from './lab/LabTwTable'
+import LabTwButtons_mp from './lab/LabTwButtons_mp'
+import LabTwAlert_mp   from './lab/LabTwAlert_mp'
+import LabTwCard_mp    from './lab/LabTwCard_mp'
+import LabTwForm_mp    from './lab/LabTwForm_mp'
+import LabTwTable_mp   from './lab/LabTwTable_mp'
 
-type LabKey = 'buttons' | 'alert' | 'card' | 'form' | 'table'
+type LabKey =
+  | 'buttons' | 'alert' | 'card' | 'form' | 'table'
+  | 'buttons-mp' | 'alert-mp' | 'card-mp' | 'form-mp' | 'table-mp'
 
 export default function AppLab() {
   const [lab, setLab] = useState<LabKey>('buttons')
@@ -26,6 +33,11 @@ export default function AppLab() {
           <option value="card">Cards</option>
           <option value="form">Form</option>
           <option value="table">Table</option>
+          <option value="buttons-mp">Buttons (Menú Restaurante)</option>
+          <option value="alert-mp">Alerts (Menú Restaurante)</option>
+          <option value="card-mp">Cards (Menú Restaurante)</option>
+          <option value="form-mp">Form (Menú Restaurante)</option>
+          <option value="table-mp">Table (Menú Restaurante)</option>
         </select>
       </div>
 
@@ -34,6 +46,12 @@ export default function AppLab() {
       {lab === 'card'    && <LabTwCard />}
       {lab === 'form'    && <LabTwForm />}
       {lab === 'table'   && <LabTwTable />}
+
+      {lab === 'buttons-mp' && <LabTwButtons_mp />}
+      {lab === 'alert-mp'   && <LabTwAlert_mp />}
+      {lab === 'card-mp'    && <LabTwCard_mp />}
+      {lab === 'form-mp'    && <LabTwForm_mp />}
+      {lab === 'table-mp'   && <LabTwTable_mp />}
     </div>
   )
 }

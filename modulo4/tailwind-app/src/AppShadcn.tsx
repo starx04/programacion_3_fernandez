@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import FormularioUsuario from './components/shadcn/FormularioUsuario'
 import TarjetaProducto from './components/shadcn/TarjetaProducto'
+import FormularioUsuario_mp from './components/shadcn/FormularioUsuario_mp'
+import TarjetaProducto_mp from './components/shadcn/TarjetaProducto_mp'
 
-type LabKey = 'buttons' | 'form' | 'card'
+type LabKey = 'buttons' | 'form' | 'card' | 'form-mp' | 'card-mp'
 
 export default function AppShadcn() {
   const [lab, setLab] = useState<LabKey>('buttons')
@@ -20,6 +22,8 @@ export default function AppShadcn() {
         >
           <option value="card">Cards</option>
           <option value="form">Form</option>
+          <option value="card-mp">Cards (Menú Restaurante)</option>
+          <option value="form-mp">Form (Menú Restaurante)</option>
 
         </select>
       </div>
@@ -27,6 +31,8 @@ export default function AppShadcn() {
 
       {lab === 'form'    && <FormularioUsuario />}
       {lab === 'card'    && <TarjetaProducto />}
+      {lab === 'form-mp' && <FormularioUsuario_mp />}
+      {lab === 'card-mp' && <TarjetaProducto_mp />}
 
     </div>
   )
