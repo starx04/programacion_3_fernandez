@@ -1,0 +1,37 @@
+/* src/theme/theme.css */
+
+:root {
+  --card: #ffffff;
+  --muted: #6b6375;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card: #1f2028;
+    --muted: #9ca3af;
+  }
+}
+
+.theme-light {
+  --card: #ffffff;
+  --muted: #6b6375;
+  --accent: #aa3bff;
+}
+
+.theme-dark {
+  --card: #1f2028;
+  --muted: #9ca3af;
+  --accent: #c084fc;
+  --bg: #16171d;
+  --text: #9ca3af;
+  --border: #2e303a;
+}
+
+.theme-warm {
+  --card: #fff8f0;
+  --muted: #8a6d5c;
+  --accent: #d97706;
+  --bg: #fffaf3;
+  --text: #6b4f3f;
+  --border: #f0dcc4;
+}

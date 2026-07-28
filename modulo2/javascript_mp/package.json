@@ -1,0 +1,8 @@
+{
+  "name": "menu-javascript-mp",
+  "version": "1.0.0",
+  "description": "Ejemplos de JavaScript para menú de restaurante",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}

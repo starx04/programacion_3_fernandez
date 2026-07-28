@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedido</title>
+</head>
+<body>
+    <h1>Formulario de Pedido con Separadores</h1>
+    <form action="/pedir" method="post">
+        <fieldset>
+            <legend>Datos del Cliente</legend>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="telefono">Teléfono:</label><br>
+            <input type="tel" id="telefono" name="telefono" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Selección de Platos</legend>
+            <label for="entrada">Entrada:</label><br>
+            <select id="entrada" name="entrada">
+                <option value="ensalada">Ensalada César</option>
+                <option value="sopa">Sopa del Día</option>
+            </select><br>
+            <label for="principal">Plato Principal:</label><br>
+            <select id="principal" name="principal">
+                <option value="pasta">Pasta Carbonara</option>
+                <option value="pollo">Pollo a la Parrilla</option>
+            </select>
+        </fieldset>
+
+        <button type="submit">Hacer Pedido</button>
+    </form>
+</body>
+</html>

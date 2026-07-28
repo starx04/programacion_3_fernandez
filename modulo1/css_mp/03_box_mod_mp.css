@@ -1,0 +1,24 @@
+.menu-card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    margin: 16px;
+    background-color: #f9f9f9;
+    }
+
+.plato {
+    border: 2px solid #d0d0d0;
+    border-radius: 8px;
+    margin: 16px;
+    background-color: #e8f5e9;
+}
+
+.plato-card {
+    width: 300px;
+    border: 5px solid #4caf50;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #ffffff;
+}

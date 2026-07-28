@@ -1,0 +1,20 @@
+.menu-card {
+  border: 1px solid #d0d0d0;   /* px: ideal para bordes finos */
+  border-radius: 8px;
+}
+.menu-card2 {
+  font-size: 16px;
+}
+
+.menu-card2 .menu-nombre {
+  font-size: 1.25em; /* 1.25 × 16px = 20px */
+  padding: 0.5em;    /* 0.5 × 16px = 8px */
+}
+
+:root {
+  --color-primario: #4caf50;
+}
+
+/* HEADER */
+.header {
+  background: #2e7d32;

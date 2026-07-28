@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Restaurante - CRUD de Meseros</title>
+    <script src="dom13-crud-sueldo_mp.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .formulario { background-color: #2c3e50; color: #fff; padding: 20px; margin-top: 20px; }
+        .formulario input { padding: 8px; width: 160px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Menu de Restaurante</h1>
+    <h2>CRUD de Meseros</h2>
+    <p>Sueldo promedio: $<span id="sueldoPromedio">0</span></p>
+
+    <div class="formulario">
+        <h3>Agregar Nuevo Mesero</h3>
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" type="text" placeholder="Nombre">
+        <label for="apellido">Apellido:</label>
+        <input id="apellido" type="text" placeholder="Apellido">
+        <label for="sueldo">Sueldo:</label>
+        <input id="sueldo" type="number" placeholder="Sueldo">
+        <button id="btn_agregar">Agregar</button>
+        <button id="btn_cancelar">Cancelar</button>
+    </div>
+    <table>
+        <thead><tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Sueldo</th><th>Acciones</th></tr></thead>
+        <tbody id="cuerpoTabla"></tbody>
+    </table>
+</body>
+</html>

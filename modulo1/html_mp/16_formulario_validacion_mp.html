@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Pedido</title>
+</head>
+<body>
+    <h1>Formulario de Pedido con Validación</h1>
+    <form action="/pedir" method="post">
+        <fieldset>
+            <legend>Información Obligatoria</legend>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Cantidad de Personas</legend>
+            <label for="personas">Número de Personas:</label><br>
+            <input type="number" id="personas" name="personas" min="1" max="20">
+        </fieldset>
+
+        <fieldset>
+            <legend>Código de Reserva</legend>
+            <label for="codigo">Código de Reserva:</label><br>
+            <input type="text" id="codigo" name="codigo" pattern="[A-Z]{3}[0-9]{3}">
+        </fieldset>
+
+        <fieldset>
+            <legend>Presupuesto</legend>
+            <label for="presupuesto">Presupuesto Máximo:</label><br>
+            <input type="number" id="presupuesto" name="presupuesto" min="10" max="500">
+        </fieldset>
+
+        <button type="submit">Validar Pedido</button>
+    </form>
+</body>
+</html>
